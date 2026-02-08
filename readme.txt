@@ -43,4 +43,6 @@ This plugin is **not affiliated with or endorsed by the Contact Form 7 team**.
    - Rate-limit interval (1–1440 minutes)
    - Enable/disable the badge
 
-4. Add the honeypot field to your forms (example):
+4. Add the honeypot field to your forms (example)
+5. Requires Plugins: contact-form-7
+
