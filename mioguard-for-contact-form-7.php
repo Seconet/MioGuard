@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: MioGuard for Contact Form 7 
  * Plugin URI: https://github.com/Seconet/MioGuard
@@ -10,6 +11,7 @@
  * Domain Path: /languages
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires Plugins: contact-form-7
  * Note: Uses WordPress transients with automatic expiration.No database cleanup or cron jobs required.
  */
 
@@ -199,7 +201,9 @@ function mioguardsg_settings_page()
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">Show “Protected by Mio Guard” badge</th>
+                    <th scope="row">
+                       <?php esc_html_e('Show “Protected by MioGuard” badge', 'mioguard-for-contact-form-7'); ?>
+                    </th>
                     <td>
                         <input
                             type="checkbox"
@@ -209,7 +213,6 @@ function mioguardsg_settings_page()
                         <p class="description">
                             <?php esc_html_e('Se selezionato, mostrerà un piccolo badge sotto i moduli CF7 protetti dal plugin.', 'mioguard-for-contact-form-7'); ?>
                         </p>
-                    </td>
                     </td>
                 </tr>
             </table>
@@ -222,32 +225,49 @@ function mioguardsg_settings_page()
 
 add_filter('wpmioguard__form_elements', function ($content) {
     if (get_option('mioguard_show_badge', 0)) {
-        $badge = '<div class="mioguardsg-badge">Protected by MioGuard</div>';
+        $badge = '<div class="mioguardsg-badge">'. esc_html__('Protected by MioGuard', 'mioguard-for-contact-form-7') . '</div>';
         $content .= $badge;
     }
     return $content;
 });
 
-add_action('wp_head', function () {
-    if (get_option('mioguard_show_badge', 0)) {
-        echo '<style>
-        .mioguardsg-badge {
-            display: inline-flex !important; /* forza il layout */
-            align-items: center;
-            font-size: 0.75em;
-            color: #555;
-            margin-top: 10px !important;
-            font-family: sans-serif;
-        }
-        .mioguardsg-badge::before {
-            content: "";
-            display: inline-block !important;
-            width: 22px;
-            height: 22px;
-            margin-right: 5px;
-            background-color: #00aa09; /* colore scudo */
-            clip-path: polygon(90% 47%, 72% 57%, 81% 75%, 63% 68%, 45% 75%, 52% 57%, 36% 46%, 54% 44%, 61% 24%, 72% 44%);
-        }
-        </style>';
+add_action('wp_enqueue_scripts', 'mioguardsg_enqueue_styles');
+
+function mioguardsg_enqueue_styles()
+{
+
+    if (! get_option('mioguard_show_badge', 0)) {
+        return;
     }
-});
+
+    // Registra uno style "vuoto"
+    wp_register_style(
+        'mioguardsg-inline-style',
+        false,
+        [],
+        '1.0.2'
+    );
+
+    wp_enqueue_style('mioguardsg-inline-style');
+
+    $css = '
+    .mioguardsg-badge {
+        display: inline-flex !important;
+        align-items: center;
+        font-size: 0.75em;
+        color: #555;
+        margin-top: 10px !important;
+        font-family: sans-serif;
+    }
+    .mioguardsg-badge::before {
+        content: "";
+        display: inline-block !important;
+        width: 22px;
+        height: 22px;
+        margin-right: 5px;
+        background-color: #00aa09;
+        clip-path: polygon(90% 47%, 72% 57%, 81% 75%, 63% 68%, 45% 75%, 52% 57%, 36% 46%, 54% 44%, 61% 24%, 72% 44%);
+    }';
+
+    wp_add_inline_style('mioguardsg-inline-style', $css);
+}
