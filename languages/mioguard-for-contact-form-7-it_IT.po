@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MioGuard for Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-08 16:20+0000\n"
-"PO-Revision-Date: 2026-02-08 16:23+0000\n"
+"PO-Revision-Date: 2026-02-09 09:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: Italiano\n"
 "Language: it_IT\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Loco-Version: 2.8.1; wp-6.9.1; php-8.3.28\n"
 "X-Domain: mioguard-for-contact-form-7"
 
-#: mioguard-for-contact-form-7.php:53
+#: mioguard-for-contact-form-7.php:55
 msgid "Hai già inviato un messaggio di recente. Riprova più tardi."
 msgstr "Hai già inviato un messaggio di recente. Riprova più tardi."
 
@@ -27,11 +27,11 @@ msgstr "https://github.com/Seconet/MioGuard"
 msgid "https://seconet.it"
 msgstr "https://seconet.it"
 
-#: mioguard-for-contact-form-7.php:73
+#: mioguard-for-contact-form-7.php:75
 msgid "Invio non consentito."
 msgstr "Invio non consentito."
 
-#: mioguard-for-contact-form-7.php:182
+#: mioguard-for-contact-form-7.php:184
 msgid "Minimum 1, maximum 1440 (24h)"
 msgstr "Minimum 1, maximum 1440 (24h)"
 
@@ -39,11 +39,15 @@ msgstr "Minimum 1, maximum 1440 (24h)"
 msgid "MioGuard for Contact Form 7"
 msgstr "MioGuard for Contact Form 7"
 
-#: mioguard-for-contact-form-7.php:188
+#: mioguard-for-contact-form-7.php:190
 msgid "Nome campo Honeypot (CF7)"
 msgstr "Nome campo Honeypot (CF7)"
 
-#: mioguard-for-contact-form-7.php:173
+#: mioguard-for-contact-form-7.php:228
+msgid "Protected by MioGuard"
+msgstr "Protetto da MioGuard"
+
+#: mioguard-for-contact-form-7.php:175
 msgid "Rate limit (minuti)"
 msgstr "Rate limit (minuti)"
 
@@ -55,13 +59,13 @@ msgstr ""
 "Rate limit e honeypot per moduli Contact Form 7. Plugin non affiliato al "
 "team ufficiale CF7."
 
-#: mioguard-for-contact-form-7.php:197
+#: mioguard-for-contact-form-7.php:199
 msgid ""
 "Se il campo è vuoto o non valido, verrà usato automaticamente company_fax"
 msgstr ""
 "Se il campo è vuoto o non valido, verrà usato automaticamente company_fax"
 
-#: mioguard-for-contact-form-7.php:210
+#: mioguard-for-contact-form-7.php:214
 msgid ""
 "Se selezionato, mostrerà un piccolo badge sotto i moduli CF7 protetti dal "
 "plugin."
@@ -73,7 +77,11 @@ msgstr ""
 msgid "Seconet - Sergio Cornacchione"
 msgstr "Seconet - Sergio Cornacchione"
 
-#: mioguard-for-contact-form-7.php:195
+#: mioguard-for-contact-form-7.php:205
+msgid "Show “Protected by MioGuard” badge"
+msgstr "Mostra il badge \"Protetto da MioGuard\""
+
+#: mioguard-for-contact-form-7.php:197
 msgid "Usa lo stesso nome nel modulo CF7 (es: <code>[text company_fax]</code>)"
 msgstr ""
 "Usa lo stesso nome nel modulo CF7 (es: <code>[text company_fax]</code>)"
