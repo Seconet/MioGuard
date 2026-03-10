@@ -2,6 +2,10 @@
 
 **MioGuard for Contact Form 7** è un micro-plugin leggero per proteggere i moduli **Contact Form 7** da spam e bot, senza CAPTCHA, servizi esterni o plugin invasivi.
 ---
+![Version](https://img.shields.io/badge/versione-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/licenza-GPLv2-green.svg)
+![Wordpress](https://img.shields.io/badge/wordPress-6+-blue)
+---
 
 ## 🔒 Funzionalità
 
@@ -94,3 +98,4 @@ GPL v2 o successiva
 
 Creato da **Seconet.it / Sergio Cornacchione**  
 Sviluppato per uso reale in produzione.
+
